@@ -1,0 +1,16 @@
+apt-get update
+apt-get install -y binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev python3
+
+temp=$(mktemp -d)
+
+git clone https://github.com/SimonKagstrom/kcov $temp
+
+cd $temp
+
+mkdir build
+
+cd build
+
+cmake ..
+make
+make install
